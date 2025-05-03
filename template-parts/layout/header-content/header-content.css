@@ -1,0 +1,188 @@
+/* Índice
+   --------------------------------------------------
+   1. General desktop navigation styles
+   2. General mobile navigation styles
+   3. Media Querys navigation
+   ================================================== */
+
+/* 1. General desktop navigation styles
+  ================================================== */
+.navigation-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-desktop__link {
+  text-decoration: none;
+}
+
+.navigation-menu-desktop {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+/* First level desktop menu item */
+.navigation-desktop .evban-menu-item-level-0 {
+  position: relative;
+  padding: 0.5em;
+}
+
+.navigation-desktop .evban-menu-item-level-0 > a {
+  /* First level links */
+  text-decoration: none;
+  color: #111; /* Links color */
+}
+
+.navigation-desktop .evban-sub-menu-level-0 {
+  /* First sub-menu */
+  display: none;
+  list-style: none;
+  position: absolute;
+  z-index: 999;
+  padding: 0%;
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+}
+
+.navigation-desktop .evban-menu-item-level-1 {
+  border: 1px solid;
+  padding: 0.5em;
+}
+
+.navigation-desktop .evban-menu-item-level-1 > a {
+  /* Second level links */
+  text-decoration: none;
+  color: #111; /* Links color */
+}
+
+.navigation-desktop .evban-menu-item-level-0:hover > .evban-sub-menu-level-0 {
+  display: block;
+}
+
+/* 2. General mobile navigation styles
+  ================================================== */
+.navigation-mobile {
+  display: none;
+}
+
+.navigation-mobile__logo-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu-toggle-button {
+  /* Toggle button mobile */
+  background: unset;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-offcanvas {
+  /* Offcanvas transition */
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  min-height: 100dvh;
+  overflow-y: auto;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.mobile-offcanvas.open {
+  left: 0;
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+.close-offcanvas-button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.navigation-menu-mobile {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  width: 100%;
+  padding: 0;
+}
+
+/* First level mobile menu item */
+/* .navigation-mobile .evban-menu-item-level-0 {
+  border: 0.5px solid gray;
+} */
+
+.navigation-mobile .evban-menu-item-level-0 > a {
+  /* First level links */
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #111; /* Links color */
+  background-color: lightgray;
+  border: 0.5px solid gray;
+}
+
+.navigation-mobile .evban-sub-menu-level-0 {
+  /* First sub-menu */
+  display: none;
+  list-style: none;
+  position: relative;
+  z-index: 999;
+  padding: 0%;
+  width: 100%;
+  top: 0%;
+  left: 0;
+}
+
+/* .navigation-mobile .evban-menu-item-level-1 {
+  border: 1px solid;
+} */
+
+.navigation-mobile .evban-menu-item-level-1 > a {
+  /* Second level links */
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #111; /* Links color */
+  background-color: ghostwhite;
+}
+
+.navigation-mobile .evban-menu-item-level-0:hover > .evban-sub-menu-level-0 {
+  display: block;
+}
+
+/* 3. Media Querys navigation
+     -------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Tablet navigation */
+  .navigation-desktop {
+    display: none;
+  }
+  .navigation-mobile {
+    display: block;
+  }
+  .mobile-offcanvas {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smartphone navigation */
+  .mobile-offcanvas {
+    width: 100%;
+  }
+}
